@@ -1,15 +1,7 @@
 #!/bin/zsh
 set -eu
 
-print "BUILD SAMPLES RUN.SH"
-
-DATE_FMT_NICE="%D{%Y-%m-%d} %D{%H:%M}"
-date-nice()
-{
-  print ${(%)DATE_FMT_NICE}
-}
-
-print "START: $( date-nice )"
+print "HOST: $( hostname )"
 
 TOP=$( /bin/pwd )
 print "PWD: $TOP"
@@ -20,14 +12,14 @@ mkdir -pv downloads sfw
 ANACONDA_SH=Anaconda3-2020.11-Linux-x86_64.sh
 cd downloads
 if [[ ! -f $ANACONDA_SH ]] {
-  wget https://repo.anaconda.com/archive/$ANACONDA_SH
+  wget --no-verbose https://repo.anaconda.com/archive/$ANACONDA_SH
 }
 
 cd ..
 cd sfw
 
 if [[ ! -d anaconda3 ]] {
-  ../downloads/$ANACONDA_SH -bs -p $TOP/sfw/anaconda3
+  bash ../downloads/$ANACONDA_SH -bs -p $TOP/sfw/anaconda3
 }
 
 PATH=$TOP/sfw/anaconda3/bin:$PATH
