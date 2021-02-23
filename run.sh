@@ -2,7 +2,7 @@
 
 print "BUILD SAMPLES RUN.SH"
 
-DATE_FMT_NICE=%D{%Y-%m-%d} %D{%H:%M}
+DATE_FMT_NICE="%D{%Y-%m-%d} %D{%H:%M}"
 date-nice()
 {
   print ${(%)DATE_FMT_NICE}
