@@ -6,6 +6,9 @@ print "HOST: $( hostname )"
 TOP=$( /bin/pwd )
 print "PWD: $TOP"
 
+print "USER: $USER"
+print "WHOAMI: $( whoami )"
+
 set -x
 
 mkdir -pv downloads sfw
