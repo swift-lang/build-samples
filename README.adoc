@@ -1,3 +1,42 @@
 = build-samples
 
 Test multiple build possibilities
+
+== Choices
+
+=== Definitions
+
+*APT:* I.e., Debian package
+
+*SOURCE:* Plain source build outside of Spack or other advanced tool
+
+=== Choices
+
+MPI_IMPL (2)::
+*MPI Implementation:* MPICH, OpenMPI
+
+MPI_BUILD (3)::
+APT, SOURCE, SPACK
+
+Tcl (4)::
+APT, SOURCE, SPACK, ANACONDA
+
+PYTHON (5)::
+OFF, APT, SOURCE, SPACK, ANACONDA
+
+R (5)::
+OFF, APT, SOURCE, SPACK, ANACONDA
+
+OS (2)::
+MAC, LINUX
+
+Combinations: 2x3x4x5x5x2 = 1200
+
+== Cases
+
+=== Repast/Bebop
+
+* GCC 7.1.0
+* System MVAPICH2
+* Tcl, Python, R -> Anaconda
+* Swift/T -> Spack
